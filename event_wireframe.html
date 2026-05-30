@@ -10,15 +10,15 @@
    THEME SYSTEM — CSS VARIABLES
 ═══════════════════════════════════ */
 :root {
-  --bg:               #f5efe0;
+  --bg:               #fbfbfb;
   --bg-alt:           #eaf3de;
   --bg-alt2:          #e8f0e0;
-  --nav-bg:           #063411;
-  --nav-text:         #f0d4a8;
-  --nav-link:         rgba(240,228,168,.82);
-  --hero-bg:          #5f0c17;
-  --hero-text:        #f0e4a8;
-  --hero-sub:         rgba(240,228,168,.78);
+  --nav-bg:           #fbfdfb;
+  --nav-text:         #000000;
+  --nav-link:         #000000
+  --hero-bg:          #fbfdfb;
+  --hero-text:        #000000;
+  --hero-sub:         #000000;
   --accent:           #c9a84c;
   --accent-dim:       rgba(201,168,76,.18);
   --btn-bg:           #f2ba66;
@@ -39,8 +39,8 @@
   --sched-border:     #c0d9b8;
   --stat-txt:         #1a5c2a;
   --sponsor-bg:       rgba(255,255,255,.75);
-  --footer-bg:        #122a18;
-  --footer-txt:       #a8d0b0;
+  --footer-bg:        #fbfdfb;
+  --footer-txt:       #000000;
 }
 body.w { /* Pure White Canvas */
   --bg:#ffffff;
@@ -72,8 +72,8 @@ body.w { /* Pure White Canvas */
   --sched-border:#c0d9b8;
   --stat-txt: #1a5c2a;
   --sponsor-bg:rgba(240,247,236,.85);
-  --footer-bg:#d9d6d1;
-  --footer-txt:#fef8f2;
+  --footer-bg:#5f0c17;
+  --footer-txt:#e1bf70;
 }
 body.c { /* Crimson & Cream */
   --bg:#f5efe0; --bg-alt:#fce8ec; --bg-alt2:#f5e8e0;
@@ -108,7 +108,7 @@ body.o { /* Orchid & Cream */
 body.m { /* Midnight Forest */
   --bg:#0a1f10; --bg-alt:#071510; --bg-alt2:#0d1e14;
   --nav-bg:#061210; --nav-text:#c9a84c; --nav-link:rgba(201,168,76,.72);
-  --hero-bg:#071510; --hero-text:#f0ead8; --hero-sub:rgba(122,170,136,.92);
+  --hero-bg:#f8cc9b; --hero-text:#f0ead8; --hero-sub:rgba(122,170,136,.92);
   --accent:#c9a84c; --accent-dim:rgba(201,168,76,.14);
   --btn-bg:#c9a84c; --btn-txt:#071510;
   --btn2-border:rgba(74,158,92,.55); --btn2-txt:#7aaa88;
@@ -120,10 +120,10 @@ body.m { /* Midnight Forest */
   --stat-txt:#c9a84c; --sponsor-bg:rgba(18,42,24,.85);
   --footer-bg:#040e08; --footer-txt:#4a9e5c;
 }
-body.r { /* Red & Cream */
+body.r { /*Code X */
   --bg:#f5efe0; --bg-alt:#fce8ec; --bg-alt2:#f5e8e0;
-  --nav-bg:#dc8733; --nav-text:#fff0f3; --nav-link:rgba(255,210,218,.85);
-  --hero-bg:#c82120; --hero-text:#fff8f5; --hero-sub:rgba(255,210,218,.88);
+  --nav-bg:#880808; --nav-text:#fff0f3; --nav-link:#F5DEB3;
+  --hero-bg:#C9510B; --hero-text:#f7e7ce; --hero-sub:rgba(255,210,218,.88);
   --accent:#d4a017; --accent-dim:rgba(212,160,23,.16);
   --btn-bg:#d4a017; --btn-txt:#3a1f00;
   --btn2-border:rgba(255,210,218,.55); --btn2-txt:#fff8f5;
@@ -133,7 +133,7 @@ body.r { /* Red & Cream */
   --badge-bg:rgba(155,28,46,.08); --badge-txt:#9b1c2e;
   --sched-row:rgba(255,248,245,.82); --sched-border:#e8c0c8;
   --stat-txt:#9b1c2e; --sponsor-bg:rgba(255,248,245,.85);
-  --footer-bg:#d4271b; --footer-txt:#f0b0c0;
+  --footer-bg:#50C878; --footer-txt:#f0b0c0;
 }
 
 /* ═══════════════════════════════════
@@ -250,6 +250,14 @@ nav {
   position:relative; overflow:hidden;
   transition:background .35s;
 }
+
+.river-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.47;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='220' viewBox='0 0 260 220'%3E%3Cdefs%3E%3CradialGradient id='gold' cx='50%25' cy='50%25'%3E%3Cstop offset='0%25' stop-color='%23E3C27A' stop-opacity='0.22'/%3E%3Cstop offset='100%25' stop-color='%23A97632' stop-opacity='0.08'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg stroke='url(%23gold)' fill='none' stroke-width='1.2'%3E%3Cpath d='M90 80 C110 50 140 50 145 85 C148 115 120 125 102 110 C82 95 80 95 90 80 Z'/%3E%3Cpath d='M115 110 C130 125 145 145 138 165 C125 160 115 145 110 125'/%3E%3Ccircle cx='120' cy='75' r='5' fill='%23D4AF37' fill-opacity='0.12'/%3E%3C/g%3E%3Cg opacity='0.08'%3E%3Ccircle cx='35' cy='40' r='2' fill='%23D4AF37'/%3E%3Ccircle cx='210' cy='165' r='2' fill='%23D4AF37'/%3E%3C/g%3E%3Cg transform='translate(120,110) scale(0.9)' opacity='0.13'%3E%3Cpath d='M90 80 C110 50 140 50 145 85 C148 115 120 125 102 110 C82 95 80 95 90 80 Z' stroke='%23D4AF37' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+}
+  
 .hero-geo {
   position:absolute;
   inset:0;
@@ -641,12 +649,12 @@ footer {
 ══════════════════════════════ -->
 <div class="theme-bar">
   <span class="theme-bar-label">Preview theme:</span>
-  <button class="tbtn on"  onclick="T('',this)">Cha & Bah</button>
-  <button class="tbtn"     onclick="T('w',this)">Gaamusha</button>
-  <button class="tbtn"     onclick="T('c',this)">Hengul</button>
-  <button class="tbtn"     onclick="T('o',this)">Kopou</button>
-  <button class="tbtn"     onclick="T('m',this)">Jetuka</button>
-  <button class="tbtn"     onclick="T('r',this)">Polakh</button>
+  <button class="tbtn on"  onclick="T('',this)">JustWhite</button>
+  <button class="tbtn"     onclick="T('w',this)">BloodRed</button>
+  <button class="tbtn"     onclick="T('c',this)">DarkPersimon</button>
+  <button class="tbtn"     onclick="T('o',this)">EmeraldGreen</button>
+  <button class="tbtn"     onclick="T('m',this)">Wheat</button>
+  <button class="tbtn"     onclick="T('r',this)">Code X</button>
 </div>
 
 <!-- ══════════════════════════════
@@ -665,11 +673,11 @@ footer {
   -->
   <img src="Transparent.png" height="85px" width="85px"/>
   <ul class="nav-links">
-    <li><a href="#">About</a></li>
-    <li><a href="#">Programme</a></li>
-    <li><a href="#">Performers</a></li>
-    <li><a href="#">Gallery</a></li>
-    <li><a href="#">Sponsors</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#programme">Programme</a></li>
+    <li><a href="#performers">Performers</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#sponsors">Sponsors</a></li>
     <li><a href="#">Contact</a></li>
     <li><a href="#" class="nav-cta">Register Now</a></li>
   </ul>
@@ -679,7 +687,8 @@ footer {
      HERO
 ══════════════════════════════ -->
 <section class="hero">
-  <div class="hero-geo"></div>
+   <div class="hero-geo"></div> 
+  <!-- <div class="river-pattern"></div> -->
   <div class="hero-content">
     <div class="hero-eyebrow">Assam Convention 2027</div>
     <h1>Celebrating Heritage,<br>Uniting the World</h1>
@@ -711,7 +720,7 @@ footer {
      ABOUT
 ══════════════════════════════ -->
 <section class="sec">
-  <div class="about-grid">
+  <div id="about" class="about-grid">
     <div class="img-ph img-ph-tall">[ Event imagery / featured photo ]</div>
     <div class="about-text">
       <div class="eyebrow">About the event</div>
@@ -735,7 +744,7 @@ footer {
      EVENT HIGHLIGHTS
 ══════════════════════════════ -->
 <section class="sec sec-alt">
-  <div class="eyebrow">Event highlights</div>
+  <div id="programme" class="eyebrow">Event highlights</div>
   <h2 class="sec-title">What to Expect</h2>
   <p class="sec-sub">Three days packed with performances, exhibitions, ceremonies, and experiences designed to connect, inspire, and celebrate.</p>
   <div class="hi-grid">
@@ -820,7 +829,7 @@ footer {
      PERFORMERS / GUESTS
 ══════════════════════════════ -->
 <section class="sec sec-alt">
-  <div class="eyebrow">Featured guests</div>
+  <div id="performers" class="eyebrow">Featured guests</div>
   <h2 class="sec-title">Performers &amp; Speakers</h2>
   <p class="sec-sub">A distinguished lineup of artists, cultural ambassadors, and thought leaders from across the globe.</p>
   <div class="perf-grid">
@@ -835,7 +844,7 @@ footer {
      GALLERY
 ══════════════════════════════ -->
 <section class="sec">
-  <div class="eyebrow">Gallery</div>
+  <div id="gallery" class="eyebrow">Gallery</div>
   <h2 class="sec-title">Event Memories</h2>
   <p class="sec-sub">A glimpse into the spirit, colour, and community of our previous gatherings.</p>
   <div class="gal-grid">
@@ -869,7 +878,7 @@ footer {
 <!-- ══════════════════════════════
      SPONSORS
 ══════════════════════════════ -->
-<div class="sponsors-sec">
+<div id="sponsors" class="sponsors-sec">
   <div class="sponsors-label">Sponsors &amp; Partners</div>
   <div class="sponsors-row">
     <div class="spon gold">[ Platinum Sponsor ]</div>
@@ -946,5 +955,664 @@ function dayTab(el) {
   el.classList.add('on');
 }
 </script>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     MARKETING MATERIALS KIT
+     ─────────────────────────────────────────────────────────
+     Each component below is:
+     • Fully self-contained with inline styles only
+     • Copyable via the "Copy HTML" button
+     • Ready to paste into any HTML file or email builder
+     • Wrap in a standalone .html with the Google Fonts <link>
+       listed in the header note for best results
+════════════════════════════════════════════════════════════ -->
+
+<style>
+/* ── Marketing Kit Shell Styles (page layout only, not the components) ── */
+.mkt-shell {
+  background:#0f0c08;
+  padding:72px 48px 96px;
+  border-top:3px solid #1a5c2a;
+}
+.mkt-shell-header {
+  text-align:center;
+  margin-bottom:64px;
+}
+.mkt-shell-header h2 {
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  color:#c9a84c;
+  font-style:italic;
+  margin-bottom:12px;
+}
+.mkt-shell-header p {
+  font-size:13px;
+  color:#6a5830;
+  max-width:600px;
+  margin:0 auto 18px;
+  line-height:1.85;
+}
+.mkt-fonts-note {
+  display:inline-block;
+  background:#1a1208;
+  border:1px solid #2a2010;
+  border-radius:6px;
+  padding:10px 20px;
+  font-size:11px;
+  color:#8a7040;
+  font-family:'Courier New',monospace;
+  letter-spacing:.2px;
+}
+.mkt-item {
+  margin-bottom:80px;
+}
+.mkt-item-meta {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:24px;
+  flex-wrap:wrap;
+}
+.mkt-item-meta-left h3 {
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  color:#e8d8a0;
+  margin-bottom:5px;
+}
+.mkt-item-meta-left .mkt-dims {
+  font-size:11px;
+  color:#5a4a28;
+  letter-spacing:.4px;
+}
+.mkt-item-meta-left .mkt-usage {
+  font-size:12px;
+  color:#7a6840;
+  margin-top:6px;
+  max-width:480px;
+  line-height:1.7;
+}
+.copy-btn {
+  background:#1a5c2a;
+  color:#c9a84c;
+  border:1px solid #2a7a3a;
+  padding:10px 24px;
+  border-radius:4px;
+  font-family:'Raleway',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.6px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .18s;
+  flex-shrink:0;
+}
+.copy-btn:hover { background:#236b34; }
+.copy-btn.copied { background:#c9a84c; color:#1a0d00; border-color:#c9a84c; }
+.mkt-canvas {
+  background:#1a1208;
+  border:1px solid #2a2010;
+  border-radius:8px;
+  padding:32px;
+  display:flex;
+  justify-content:center;
+  overflow-x:auto;
+}
+.mkt-divider {
+  border:none;
+  border-top:1px solid #1a1208;
+  margin:0 0 80px;
+}
+</style>
+
+<div class="mkt-shell">
+
+  <!-- ── HEADER ── -->
+  <div class="mkt-shell-header">
+    <h2>Marketing Materials</h2>
+    <p>Each is self-contained — copy the HTML block and paste into any project. For typography, include the fonts link below in your document's <code style="color:#c9a84c;">&lt;head&gt;</code>.</p>
+    <div class="mkt-fonts-note">&lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&amp;family=Raleway:wght@400;600;700&amp;display=swap" rel="stylesheet"&gt;</div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       1. EVENT INVITATION CARD
+       Print: A5 (148×210mm) · 300 DPI
+       Digital: 560×794px
+  ════════════════════════════════════ -->
+  <div class="mkt-item">
+    <div class="mkt-item-meta">
+      <div class="mkt-item-meta-left">
+        <h3>1 — Event Invitation Card</h3>
+        <div class="mkt-dims">A5 · 148 × 210 mm · Print &amp; Digital</div>
+        <div class="mkt-usage">Formal digital invite, printable card, email attachment, or PDF export. Replace logo placeholder with your PNG image tag. Swap bracketed text with real event details.</div>
+      </div>
+      <button class="copy-btn" onclick="copyMkt('mkt-invite')">📋 Copy HTML</button>
+    </div>
+    <div class="mkt-canvas">
+
+      <!-- ╔══════════════════════════════════════╗
+           ║  START COPY — INVITATION CARD        ║
+           ╚══════════════════════════════════════╝ -->
+      <div id="mkt-invite" style="width:500px;min-height:710px;background:#F5EFE0;position:relative;overflow:hidden;font-family:'Raleway',Arial,sans-serif;box-shadow:0 8px 40px rgba(0,0,0,0.35);flex-shrink:0;">
+
+        <!-- Green header band -->
+        <div style="background:#1a5c2a;height:94px;display:flex;align-items:center;padding:0 30px;gap:0;">
+          <img src="Transparent.png" height="85px" width="85px"/>
+          <div style="margin-left:auto;text-align:right;">
+            <div style="font-size:8.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#c9a84c;">Assam Convention 2027</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:4px;">North America</div>
+          </div>
+        </div>
+
+        <!-- Gamosa motif border: crimson on ivory -->
+        <svg width="500" height="52" viewBox="0 0 500 52" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <rect width="500" height="52" fill="#F5EFE0"/>
+          <line x1="0" y1="3" x2="500" y2="3" stroke="#9b1c2e" stroke-width="2" opacity=".75"/>
+          <g fill="#9b1c2e" opacity=".8">
+            <polygon points="0,3 7,16 14,3"/><polygon points="14,3 21,16 28,3"/><polygon points="28,3 35,16 42,3"/><polygon points="42,3 49,16 56,3"/><polygon points="56,3 63,16 70,3"/><polygon points="70,3 77,16 84,3"/><polygon points="84,3 91,16 98,3"/><polygon points="98,3 105,16 112,3"/><polygon points="112,3 119,16 126,3"/><polygon points="126,3 133,16 140,3"/><polygon points="140,3 147,16 154,3"/><polygon points="154,3 161,16 168,3"/><polygon points="168,3 175,16 182,3"/><polygon points="182,3 189,16 196,3"/><polygon points="196,3 203,16 210,3"/><polygon points="210,3 217,16 224,3"/><polygon points="224,3 231,16 238,3"/><polygon points="238,3 245,16 252,3"/><polygon points="252,3 259,16 266,3"/><polygon points="266,3 273,16 280,3"/><polygon points="280,3 287,16 294,3"/><polygon points="294,3 301,16 308,3"/><polygon points="308,3 315,16 322,3"/><polygon points="322,3 329,16 336,3"/><polygon points="336,3 343,16 350,3"/><polygon points="350,3 357,16 364,3"/><polygon points="364,3 371,16 378,3"/><polygon points="378,3 385,16 392,3"/><polygon points="392,3 399,16 406,3"/><polygon points="406,3 413,16 420,3"/><polygon points="420,3 427,16 434,3"/><polygon points="434,3 441,16 448,3"/><polygon points="448,3 455,16 462,3"/><polygon points="462,3 469,16 476,3"/><polygon points="476,3 483,16 490,3"/><polygon points="490,3 497,16 504,3"/>
+          </g>
+          <!-- diamond row -->
+          <g fill="#9b1c2e" opacity=".7">
+            <polygon points="28,33 42,20 56,33 42,46"/><polygon points="112,33 126,20 140,33 126,46"/>
+            <polygon points="196,33 210,20 224,33 210,46"/><polygon points="280,33 294,20 308,33 294,46"/>
+            <polygon points="364,33 378,20 392,33 378,46"/><polygon points="448,33 462,20 476,33 462,46"/>
+          </g>
+          <!-- lotus between diamonds -->
+          <g fill="#9b1c2e" opacity=".6">
+            <ellipse cx="77" cy="32" rx="7" ry="11"/><ellipse cx="77" cy="22" rx="4" ry="6"/>
+            <ellipse cx="161" cy="32" rx="7" ry="11"/><ellipse cx="161" cy="22" rx="4" ry="6"/>
+            <ellipse cx="245" cy="32" rx="7" ry="11"/><ellipse cx="245" cy="22" rx="4" ry="6"/>
+            <ellipse cx="329" cy="32" rx="7" ry="11"/><ellipse cx="329" cy="22" rx="4" ry="6"/>
+            <ellipse cx="413" cy="32" rx="7" ry="11"/><ellipse cx="413" cy="22" rx="4" ry="6"/>
+          </g>
+          <line x1="0" y1="50" x2="500" y2="50" stroke="#9b1c2e" stroke-width="1" opacity=".4"/>
+        </svg>
+
+        <!-- Body content -->
+        <div style="padding:28px 38px 20px;text-align:center;">
+          <div style="font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#9b1c2e;margin-bottom:14px;">You Are Cordially Invited</div>
+
+          <div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#8a7040;margin-bottom:6px;">To Attend</div>
+          <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:700;color:#1a5c2a;line-height:1.25;margin-bottom:6px;">Celebrating Heritage,<br>Uniting the World</h1>
+          <div style="font-size:12px;color:#6a5030;font-style:italic;margin-bottom:24px;">A Three-Day International Cultural Festival</div>
+
+          <!-- Decorative divider -->
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+            <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#c9a84c);"></div>
+            <svg width="22" height="22" viewBox="0 0 22 22"><polygon points="11,1 13.5,8.5 21,8.5 15,13.5 17.5,21 11,16.5 4.5,21 7,13.5 1,8.5 8.5,8.5" fill="none" stroke="#c9a84c" stroke-width="1.2"/></svg>
+            <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#c9a84c);"></div>
+          </div>
+
+          <!-- Date & Venue box -->
+          <div style="border:1.5px solid rgba(201,168,76,0.45);border-radius:6px;padding:18px 22px;margin-bottom:22px;background:rgba(255,255,255,0.6);">
+            <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:center;">
+              <div style="text-align:center;padding-right:16px;">
+                <div style="font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#8a7040;margin-bottom:4px;">Date</div>
+                <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;color:#1a5c2a;line-height:1;">3 — 5</div>
+                <div style="font-size:10px;font-weight:700;color:#c9a84c;margin-top:2px;">JULY 2027</div>
+              </div>
+              <div style="background:rgba(201,168,76,0.3);width:1px;align-self:stretch;"></div>
+              <div style="text-align:center;padding-left:16px;">
+                <div style="font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#8a7040;margin-bottom:4px;">Venue</div>
+                <div style="font-size:12px;font-weight:600;color:#2c1a00;line-height:1.4;">City Convention<br>Centre</div>
+                <div style="font-size:10px;color:#8a7040;margin-top:2px;">North America</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlights row -->
+          <div style="display:flex;gap:8px;justify-content:center;margin-bottom:22px;flex-wrap:wrap;">
+            <span style="font-size:9px;font-weight:600;padding:4px 12px;border-radius:12px;background:rgba(26,92,42,0.08);color:#1a5c2a;border:1px solid rgba(26,92,42,0.15);">Cultural Performances</span>
+            <span style="font-size:9px;font-weight:600;padding:4px 12px;border-radius:12px;background:rgba(201,168,76,0.1);color:#8a6020;border:1px solid rgba(201,168,76,0.25);">Awards Gala</span>
+            <span style="font-size:9px;font-weight:600;padding:4px 12px;border-radius:12px;background:rgba(155,28,46,0.07);color:#9b1c2e;border:1px solid rgba(155,28,46,0.15);">Heritage Market</span>
+            <span style="font-size:9px;font-weight:600;padding:4px 12px;border-radius:12px;background:rgba(26,92,42,0.08);color:#1a5c2a;border:1px solid rgba(26,92,42,0.15);">Art Exhibition</span>
+          </div>
+
+          <!-- RSVP -->
+          <div style="background:#1a5c2a;border-radius:5px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);">RSVP By</div>
+              <div style="font-size:12px;font-weight:600;color:#c9a84c;margin-top:2px;">June 15, 2027</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:8px;color:rgba(255,255,255,0.55);">Register at</div>
+              <div style="font-size:11px;font-weight:600;color:#c9a84c;">www.eventname.org</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gold motif footer border -->
+        <svg width="500" height="44" viewBox="0 0 500 44" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <rect width="500" height="44" fill="#F5EFE0"/>
+          <line x1="0" y1="3" x2="500" y2="3" stroke="#c9a84c" stroke-width="1.5" opacity=".6"/>
+          <g fill="#c9a84c" opacity=".65">
+            <polygon points="0,3 7,14 14,3"/><polygon points="14,3 21,14 28,3"/><polygon points="28,3 35,14 42,3"/><polygon points="42,3 49,14 56,3"/><polygon points="56,3 63,14 70,3"/><polygon points="70,3 77,14 84,3"/><polygon points="84,3 91,14 98,3"/><polygon points="98,3 105,14 112,3"/><polygon points="112,3 119,14 126,3"/><polygon points="126,3 133,14 140,3"/><polygon points="140,3 147,14 154,3"/><polygon points="154,3 161,14 168,3"/><polygon points="168,3 175,14 182,3"/><polygon points="182,3 189,14 196,3"/><polygon points="196,3 203,14 210,3"/><polygon points="210,3 217,14 224,3"/><polygon points="224,3 231,14 238,3"/><polygon points="238,3 245,14 252,3"/><polygon points="252,3 259,14 266,3"/><polygon points="266,3 273,14 280,3"/><polygon points="280,3 287,14 294,3"/><polygon points="294,3 301,14 308,3"/><polygon points="308,3 315,14 322,3"/><polygon points="322,3 329,14 336,3"/><polygon points="336,3 343,14 350,3"/><polygon points="350,3 357,14 364,3"/><polygon points="364,3 371,14 378,3"/><polygon points="378,3 385,14 392,3"/><polygon points="392,3 399,14 406,3"/><polygon points="406,3 413,14 420,3"/><polygon points="420,3 427,14 434,3"/><polygon points="434,3 441,14 448,3"/><polygon points="448,3 455,14 462,3"/><polygon points="462,3 469,14 476,3"/><polygon points="476,3 483,14 490,3"/><polygon points="490,3 497,14 504,3"/>
+          </g>
+          <!-- Green footer band -->
+          <rect y="20" width="500" height="24" fill="#1a5c2a"/>
+          <text x="250" y="35" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="700" letter-spacing="2" fill="#c9a84c" opacity=".8">ASSAM CONVENTION 2027 · NORTH AMERICA</text>
+        </svg>
+
+      </div>
+      <!-- ╔══════════════════════════════════════╗
+           ║  END COPY — INVITATION CARD          ║
+           ╚══════════════════════════════════════╝ -->
+
+    </div>
+  </div>
+
+  <hr class="mkt-divider">
+
+  <!-- ════════════════════════════════════
+       2. FACEBOOK EVENT COVER
+       Spec: 820 × 312 px
+  ════════════════════════════════════ -->
+  <div class="mkt-item">
+    <div class="mkt-item-meta">
+      <div class="mkt-item-meta-left">
+        <h3>2 — Facebook Event Cover</h3>
+        <div class="mkt-dims">820 × 312 px · Facebook Events / Pages</div>
+        <div class="mkt-usage">Upload directly as a Facebook event cover image. Shown here at 100% width. Export to PNG via browser screenshot or a headless-browser tool. Key text is kept within the safe zone (inside the 820×312 frame).</div>
+      </div>
+      <button class="copy-btn" onclick="copyMkt('mkt-fb')">📋 Copy HTML</button>
+    </div>
+    <div class="mkt-canvas" style="padding:24px;">
+
+      <!-- ╔══════════════════════════════════════╗
+           ║  START COPY — FACEBOOK COVER         ║
+           ╚══════════════════════════════════════╝ -->
+      <div id="mkt-fb" style="width:820px;height:312px;background:#1a5c2a;position:relative;overflow:hidden;font-family:'Raleway',Arial,sans-serif;flex-shrink:0;">
+
+        <!-- Background pattern overlay -->
+        <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(201,168,76,0.03) 0,rgba(201,168,76,0.03) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,rgba(201,168,76,0.03) 0,rgba(201,168,76,0.03) 1px,transparent 0,transparent 50%);background-size:28px 28px;"></div>
+
+        <!-- Left dark accent column -->
+        <div style="position:absolute;left:0;top:0;width:220px;height:100%;background:rgba(0,0,0,0.28);"></div>
+
+        <!-- Logo zone (left column) -->
+        <div style="position:absolute;left:0;top:0;width:220px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+          <!-- LOGO SLOT: replace with <img src="logo.png" style="width:120px;"> -->
+          <img src="Transparent.png" height="85px" width="85px"/>
+          <div style="font-size:8px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(201,168,76,0.7);">Official Event</div>
+        </div>
+
+        <!-- Vertical divider with gold diamonds -->
+        <svg style="position:absolute;left:218px;top:0;" width="4" height="312" viewBox="0 0 4 312" xmlns="http://www.w3.org/2000/svg">
+          <rect width="4" height="312" fill="rgba(201,168,76,0.25)"/>
+          <polygon points="2,40 5,52 2,64 -1,52" fill="#c9a84c" opacity=".7"/>
+          <polygon points="2,100 5,112 2,124 -1,112" fill="#c9a84c" opacity=".7"/>
+          <polygon points="2,160 5,172 2,184 -1,172" fill="#c9a84c" opacity=".9"/>
+          <polygon points="2,220 5,232 2,244 -1,232" fill="#c9a84c" opacity=".7"/>
+          <polygon points="2,260 5,272 2,284 -1,272" fill="#c9a84c" opacity=".7"/>
+        </svg>
+
+        <!-- Main content (center) -->
+        <div style="position:absolute;left:240px;top:0;right:190px;height:100%;display:flex;flex-direction:column;justify-content:center;padding:24px 20px;">
+          <div style="font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+            <span style="display:inline-block;width:24px;height:1.5px;background:#c9a84c;"></span>
+            International Cultural Festival
+          </div>
+          <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:700;color:#f0e4c0;line-height:1.2;margin-bottom:8px;">Celebrating Heritage,<br>Uniting the World</h1>
+          <p style="font-size:11px;color:rgba(240,228,192,0.7);line-height:1.6;margin-bottom:14px;max-width:340px;">Three extraordinary days of culture, art, and community. Rooted in Assamese tradition — open to the world.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="font-size:9px;font-weight:700;padding:4px 12px;border-radius:2px;background:rgba(201,168,76,0.15);color:#c9a84c;border:1px solid rgba(201,168,76,0.3);">Cultural Performances</span>
+            <span style="font-size:9px;font-weight:700;padding:4px 12px;border-radius:2px;background:rgba(201,168,76,0.15);color:#c9a84c;border:1px solid rgba(201,168,76,0.3);">Awards Gala</span>
+            <span style="font-size:9px;font-weight:700;padding:4px 12px;border-radius:2px;background:rgba(201,168,76,0.15);color:#c9a84c;border:1px solid rgba(201,168,76,0.3);">Heritage Market</span>
+          </div>
+        </div>
+
+        <!-- Date badge (right) -->
+        <div style="position:absolute;right:24px;top:50%;transform:translateY(-50%);border:1.5px solid rgba(201,168,76,0.45);border-radius:6px;padding:16px 18px;text-align:center;background:rgba(0,0,0,0.25);">
+          <div style="font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:3px;">July</div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:38px;font-weight:700;color:#f0e4c0;line-height:1;">3</div>
+          <div style="font-size:10px;color:rgba(240,228,192,0.7);margin-top:2px;">— 5 · 2027</div>
+          <div style="width:100%;height:1px;background:rgba(201,168,76,0.3);margin:8px 0;"></div>
+          <div style="font-size:7.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#c9a84c;">Register Now</div>
+          <div style="font-size:8px;color:rgba(240,228,192,0.55);margin-top:2px;">eventname.org</div>
+        </div>
+
+        <!-- Top gamosa border strip -->
+        <svg style="position:absolute;top:0;left:0;" width="820" height="14" viewBox="0 0 820 14" xmlns="http://www.w3.org/2000/svg">
+          <rect width="820" height="14" fill="rgba(0,0,0,0.15)"/>
+          <g fill="#c9a84c" opacity=".6">
+            <polygon points="0,0 6,12 12,0"/><polygon points="12,0 18,12 24,0"/><polygon points="24,0 30,12 36,0"/><polygon points="36,0 42,12 48,0"/><polygon points="48,0 54,12 60,0"/><polygon points="60,0 66,12 72,0"/><polygon points="72,0 78,12 84,0"/><polygon points="84,0 90,12 96,0"/><polygon points="96,0 102,12 108,0"/><polygon points="108,0 114,12 120,0"/><polygon points="120,0 126,12 132,0"/><polygon points="132,0 138,12 144,0"/><polygon points="144,0 150,12 156,0"/><polygon points="156,0 162,12 168,0"/><polygon points="168,0 174,12 180,0"/><polygon points="180,0 186,12 192,0"/><polygon points="192,0 198,12 204,0"/><polygon points="204,0 210,12 216,0"/><polygon points="216,0 222,12 228,0"/><polygon points="228,0 234,12 240,0"/><polygon points="240,0 246,12 252,0"/><polygon points="252,0 258,12 264,0"/><polygon points="264,0 270,12 276,0"/><polygon points="276,0 282,12 288,0"/><polygon points="288,0 294,12 300,0"/><polygon points="300,0 306,12 312,0"/><polygon points="312,0 318,12 324,0"/><polygon points="324,0 330,12 336,0"/><polygon points="336,0 342,12 348,0"/><polygon points="348,0 354,12 360,0"/><polygon points="360,0 366,12 372,0"/><polygon points="372,0 378,12 384,0"/><polygon points="384,0 390,12 396,0"/><polygon points="396,0 402,12 408,0"/><polygon points="408,0 414,12 420,0"/><polygon points="420,0 426,12 432,0"/><polygon points="432,0 438,12 444,0"/><polygon points="444,0 450,12 456,0"/><polygon points="456,0 462,12 468,0"/><polygon points="468,0 474,12 480,0"/><polygon points="480,0 486,12 492,0"/><polygon points="492,0 498,12 504,0"/><polygon points="504,0 510,12 516,0"/><polygon points="516,0 522,12 528,0"/><polygon points="528,0 534,12 540,0"/><polygon points="540,0 546,12 552,0"/><polygon points="552,0 558,12 564,0"/><polygon points="564,0 570,12 576,0"/><polygon points="576,0 582,12 588,0"/><polygon points="588,0 594,12 600,0"/><polygon points="600,0 606,12 612,0"/><polygon points="612,0 618,12 624,0"/><polygon points="624,0 630,12 636,0"/><polygon points="636,0 642,12 648,0"/><polygon points="648,0 654,12 660,0"/><polygon points="660,0 666,12 672,0"/><polygon points="672,0 678,12 684,0"/><polygon points="684,0 690,12 696,0"/><polygon points="696,0 702,12 708,0"/><polygon points="708,0 714,12 720,0"/><polygon points="720,0 726,12 732,0"/><polygon points="732,0 738,12 744,0"/><polygon points="744,0 750,12 756,0"/><polygon points="756,0 762,12 768,0"/><polygon points="768,0 774,12 780,0"/><polygon points="780,0 786,12 792,0"/><polygon points="792,0 798,12 804,0"/><polygon points="804,0 810,12 816,0"/>
+          </g>
+        </svg>
+
+        <!-- Bottom gamosa border strip -->
+        <svg style="position:absolute;bottom:0;left:0;" width="820" height="14" viewBox="0 0 820 14" xmlns="http://www.w3.org/2000/svg">
+          <rect width="820" height="14" fill="rgba(0,0,0,0.15)"/>
+          <g fill="#c9a84c" opacity=".6">
+            <polygon points="0,14 6,2 12,14"/><polygon points="12,14 18,2 24,14"/><polygon points="24,14 30,2 36,14"/><polygon points="36,14 42,2 48,14"/><polygon points="48,14 54,2 60,14"/><polygon points="60,14 66,2 72,14"/><polygon points="72,14 78,2 84,14"/><polygon points="84,14 90,2 96,14"/><polygon points="96,14 102,2 108,14"/><polygon points="108,14 114,2 120,14"/><polygon points="120,14 126,2 132,14"/><polygon points="132,14 138,2 144,14"/><polygon points="144,14 150,2 156,14"/><polygon points="156,14 162,2 168,14"/><polygon points="168,14 174,2 180,14"/><polygon points="180,14 186,2 192,14"/><polygon points="192,14 198,2 204,14"/><polygon points="204,14 210,2 216,14"/><polygon points="216,14 222,2 228,14"/><polygon points="228,14 234,2 240,14"/><polygon points="240,14 246,2 252,14"/><polygon points="252,14 258,2 264,14"/><polygon points="264,14 270,2 276,14"/><polygon points="276,14 282,2 288,14"/><polygon points="288,14 294,2 300,14"/><polygon points="300,14 306,2 312,14"/><polygon points="312,14 318,2 324,14"/><polygon points="324,14 330,2 336,14"/><polygon points="336,14 342,2 348,14"/><polygon points="348,14 354,2 360,14"/><polygon points="360,14 366,2 372,14"/><polygon points="372,14 378,2 384,14"/><polygon points="384,14 390,2 396,14"/><polygon points="396,14 402,2 408,14"/><polygon points="408,14 414,2 420,14"/><polygon points="420,14 426,2 432,14"/><polygon points="432,14 438,2 444,14"/><polygon points="444,14 450,2 456,14"/><polygon points="456,14 462,2 468,14"/><polygon points="468,14 474,2 480,14"/><polygon points="480,14 486,2 492,14"/><polygon points="492,14 498,2 504,14"/><polygon points="504,14 510,2 516,14"/><polygon points="516,14 522,2 528,14"/><polygon points="528,14 534,2 540,14"/><polygon points="540,14 546,2 552,14"/><polygon points="552,14 558,2 564,14"/><polygon points="564,14 570,2 576,14"/><polygon points="576,14 582,2 588,14"/><polygon points="588,14 594,2 600,14"/><polygon points="600,14 606,2 612,14"/><polygon points="612,14 618,2 624,14"/><polygon points="624,14 630,2 636,14"/><polygon points="636,14 642,2 648,14"/><polygon points="648,14 654,2 660,14"/><polygon points="660,14 666,2 672,14"/><polygon points="672,14 678,2 684,14"/><polygon points="684,14 690,2 696,14"/><polygon points="696,14 702,2 708,14"/><polygon points="708,14 714,2 720,14"/><polygon points="720,14 726,2 732,14"/><polygon points="732,14 738,2 744,14"/><polygon points="744,14 750,2 756,14"/><polygon points="756,14 762,2 768,14"/><polygon points="768,14 774,2 780,14"/><polygon points="780,14 786,2 792,14"/><polygon points="792,14 798,2 804,14"/><polygon points="804,14 810,2 816,14"/>
+          </g>
+        </svg>
+
+      </div>
+      <!-- ╔══════════════════════════════════════╗
+           ║  END COPY — FACEBOOK COVER           ║
+           ╚══════════════════════════════════════╝ -->
+    </div>
+  </div>
+
+  <hr class="mkt-divider">
+
+  <!-- ════════════════════════════════════
+       3. INSTAGRAM POST
+       Spec: 1080 × 1080 px (shown at 540×540)
+  ════════════════════════════════════ -->
+  <div class="mkt-item">
+    <div class="mkt-item-meta">
+      <div class="mkt-item-meta-left">
+        <h3>3 — Instagram Post</h3>
+        <div class="mkt-dims">1080 × 1080 px (displayed at 50% · 540 × 540 px) · Instagram Feed / Stories crop</div>
+        <div class="mkt-usage">Square post format. Scale the component up to 1080×1080 (double all px values) before exporting to PNG. The 2:1 scale factor means all text and elements will appear at crisp full resolution on Instagram.</div>
+      </div>
+      <button class="copy-btn" onclick="copyMkt('mkt-ig')">📋 Copy HTML</button>
+    </div>
+    <div class="mkt-canvas">
+
+      <!-- ╔══════════════════════════════════════╗
+           ║  START COPY — INSTAGRAM POST         ║
+           ╚══════════════════════════════════════╝ -->
+      <div id="mkt-ig" style="width:540px;height:540px;background:#F5EFE0;position:relative;overflow:hidden;font-family:'Raleway',Arial,sans-serif;flex-shrink:0;">
+
+        <!-- Top crimson band -->
+        <div style="position:absolute;top:0;left:0;right:0;height:160px;background:#9b1c2e;"></div>
+
+        <!-- Bottom green band -->
+        <div style="position:absolute;bottom:0;left:0;right:0;height:90px;background:#1a5c2a;"></div>
+
+        <!-- Subtle background pattern on cream area -->
+        <div style="position:absolute;top:160px;bottom:90px;left:0;right:0;background:repeating-linear-gradient(90deg,rgba(201,168,76,0.04) 0,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 36px),repeating-linear-gradient(0deg,rgba(201,168,76,0.04) 0,rgba(201,168,76,0.04) 1px,transparent 1px,transparent 36px);"></div>
+
+        <!-- Logo + title row in crimson band -->
+        <div style="position:absolute;top:18px;left:22px;right:22px;display:flex;align-items:center;justify-content:space-between;">
+          <img src="Transparent.png" height="85px" width="85px"/>
+          <div style="text-align:right;">
+            <div style="font-size:7.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;">Assam Convention</div>
+            <div style="font-size:9px;color:rgba(255,255,255,0.65);margin-top:2px;">North America · 2027</div>
+          </div>
+        </div>
+
+        <!-- Crimson→Cream motif transition -->
+        <svg style="position:absolute;top:148px;left:0;" width="540" height="36" viewBox="0 0 540 36" xmlns="http://www.w3.org/2000/svg">
+          <rect width="540" height="36" fill="#9b1c2e"/>
+          <g fill="#c9a84c" opacity=".7">
+            <polygon points="0,0 8,18 16,0"/><polygon points="16,0 24,18 32,0"/><polygon points="32,0 40,18 48,0"/><polygon points="48,0 56,18 64,0"/><polygon points="64,0 72,18 80,0"/><polygon points="80,0 88,18 96,0"/><polygon points="96,0 104,18 112,0"/><polygon points="112,0 120,18 128,0"/><polygon points="128,0 136,18 144,0"/><polygon points="144,0 152,18 160,0"/><polygon points="160,0 168,18 176,0"/><polygon points="176,0 184,18 192,0"/><polygon points="192,0 200,18 208,0"/><polygon points="208,0 216,18 224,0"/><polygon points="224,0 232,18 240,0"/><polygon points="240,0 248,18 256,0"/><polygon points="256,0 264,18 272,0"/><polygon points="272,0 280,18 288,0"/><polygon points="288,0 296,18 304,0"/><polygon points="304,0 312,18 320,0"/><polygon points="320,0 328,18 336,0"/><polygon points="336,0 344,18 352,0"/><polygon points="352,0 360,18 368,0"/><polygon points="368,0 376,18 384,0"/><polygon points="384,0 392,18 400,0"/><polygon points="400,0 408,18 416,0"/><polygon points="416,0 424,18 432,0"/><polygon points="432,0 440,18 448,0"/><polygon points="448,0 456,18 464,0"/><polygon points="464,0 472,18 480,0"/><polygon points="480,0 488,18 496,0"/><polygon points="496,0 504,18 512,0"/><polygon points="512,0 520,18 528,0"/><polygon points="528,0 536,18 544,0"/>
+          </g>
+          <rect y="18" width="540" height="18" fill="#F5EFE0"/>
+        </svg>
+
+        <!-- Main headline block -->
+        <div style="position:absolute;top:195px;left:28px;right:28px;text-align:center;">
+          <div style="font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#9b1c2e;margin-bottom:8px;">You Are Invited</div>
+          <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:30px;font-weight:700;color:#1a5c2a;line-height:1.2;margin-bottom:6px;">Celebrating Heritage,<br>Uniting the World</h1>
+          <div style="font-size:11px;color:#6a5030;font-style:italic;margin-bottom:18px;">International Cultural Festival 2027</div>
+
+          <!-- Date pill -->
+          <div style="display:inline-flex;align-items:center;gap:0;border:1.5px solid rgba(201,168,76,0.5);border-radius:40px;overflow:hidden;margin-bottom:14px;">
+            <div style="background:#1a5c2a;padding:8px 18px;">
+              <span style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#c9a84c;">July 3–5</span>
+            </div>
+            <div style="padding:8px 18px;background:#F5EFE0;">
+              <span style="font-size:11px;font-weight:700;color:#6a5030;">2027</span>
+            </div>
+          </div>
+
+          <!-- Tags row -->
+          <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;">
+            <span style="font-size:8.5px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(155,28,46,0.08);color:#9b1c2e;border:1px solid rgba(155,28,46,0.18);">Performances</span>
+            <span style="font-size:8.5px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(201,168,76,0.1);color:#8a6020;border:1px solid rgba(201,168,76,0.25);">Gala</span>
+            <span style="font-size:8.5px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(26,92,42,0.08);color:#1a5c2a;border:1px solid rgba(26,92,42,0.18);">Market</span>
+            <span style="font-size:8.5px;font-weight:700;padding:3px 10px;border-radius:10px;background:rgba(26,92,42,0.08);color:#1a5c2a;border:1px solid rgba(26,92,42,0.18);">Exhibition</span>
+          </div>
+        </div>
+
+        <!-- Cream → Green motif border at bottom -->
+        <svg style="position:absolute;bottom:76px;left:0;" width="540" height="28" viewBox="0 0 540 28" xmlns="http://www.w3.org/2000/svg">
+          <rect width="540" height="10" fill="#F5EFE0"/>
+          <rect y="10" width="540" height="18" fill="#1a5c2a"/>
+          <g fill="#c9a84c" opacity=".7">
+            <polygon points="0,28 8,10 16,28"/><polygon points="16,28 24,10 32,28"/><polygon points="32,28 40,10 48,28"/><polygon points="48,28 56,10 64,28"/><polygon points="64,28 72,10 80,28"/><polygon points="80,28 88,10 96,28"/><polygon points="96,28 104,10 112,28"/><polygon points="112,28 120,10 128,28"/><polygon points="128,28 136,10 144,28"/><polygon points="144,28 152,10 160,28"/><polygon points="160,28 168,10 176,28"/><polygon points="176,28 184,10 192,28"/><polygon points="192,28 200,10 208,28"/><polygon points="208,28 216,10 224,28"/><polygon points="224,28 232,10 240,28"/><polygon points="240,28 248,10 256,28"/><polygon points="256,28 264,10 272,28"/><polygon points="272,28 280,10 288,28"/><polygon points="288,28 296,10 304,28"/><polygon points="304,28 312,10 320,28"/><polygon points="320,28 328,10 336,28"/><polygon points="336,28 344,10 352,28"/><polygon points="352,28 360,10 368,28"/><polygon points="368,28 376,10 384,28"/><polygon points="384,28 392,10 400,28"/><polygon points="400,28 408,10 416,28"/><polygon points="416,28 424,10 432,28"/><polygon points="432,28 440,10 448,28"/><polygon points="448,28 456,10 464,28"/><polygon points="464,28 472,10 480,28"/><polygon points="480,28 488,10 496,28"/><polygon points="496,28 504,10 512,28"/><polygon points="512,28 520,10 528,28"/><polygon points="528,28 536,10 544,28"/>
+          </g>
+        </svg>
+
+        <!-- Footer bar (green) -->
+        <div style="position:absolute;bottom:0;left:0;right:0;height:76px;background:#1a5c2a;display:flex;align-items:center;justify-content:space-between;padding:0 24px;">
+          <div>
+            <div style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(201,168,76,0.6);">Register at</div>
+            <div style="font-size:13px;font-weight:700;color:#c9a84c;">www.eventname.org</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.6);">#AssamConvention2027</div>
+            <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:2px;">#CulturalFestival #Heritage</div>
+          </div>
+        </div>
+
+      </div>
+      <!-- ╔══════════════════════════════════════╗
+           ║  END COPY — INSTAGRAM POST           ║
+           ╚══════════════════════════════════════╝ -->
+    </div>
+  </div>
+
+  <hr class="mkt-divider">
+
+  <!-- ════════════════════════════════════
+       4. EVENT PROMOTION LEAFLET
+       Spec: DL (99 × 210 mm) — front face
+  ════════════════════════════════════ -->
+  <div class="mkt-item">
+    <div class="mkt-item-meta">
+      <div class="mkt-item-meta-left">
+        <h3>4 — Event Promotion Leaflet</h3>
+        <div class="mkt-dims">DL format · 99 × 210 mm · Print / Digital handout / Email attachment</div>
+        <div class="mkt-usage">DL (third of A4) is the standard handout / mailer size — fits inside a C4 envelope. This is the front face. Shown at 374×794px (scale ×3.78 for 300dpi print). A matching back panel can be built from this template by replacing the hero section with programme details.</div>
+      </div>
+      <button class="copy-btn" onclick="copyMkt('mkt-leaflet')">📋 Copy HTML</button>
+    </div>
+    <div class="mkt-canvas">
+
+      <!-- ╔══════════════════════════════════════╗
+           ║  START COPY — PROMOTION LEAFLET      ║
+           ╚══════════════════════════════════════╝ -->
+      <div id="mkt-leaflet" style="width:374px;min-height:794px;background:#F5EFE0;position:relative;overflow:hidden;font-family:'Raleway',Arial,sans-serif;box-shadow:0 8px 40px rgba(0,0,0,0.35);flex-shrink:0;display:flex;flex-direction:column;">
+
+        <!-- ── HEADER: green with logo ── -->
+        <div style="background:#1a5c2a;padding:22px 24px 0;flex-shrink:0;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+            <img src="Transparent.png" height="85px" width="85px"/>
+            <div style="text-align:right;">
+              <div style="font-size:7.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#c9a84c;">Assam Convention</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.55);margin-top:3px;">North America · 2027</div>
+            </div>
+          </div>
+
+          <!-- Hero headline on green -->
+          <div style="padding-bottom:0;text-align:center;">
+            <div style="font-size:7.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px;">
+              <span style="display:inline-block;width:20px;height:1.5px;background:#c9a84c;"></span>
+              International Cultural Festival
+              <span style="display:inline-block;width:20px;height:1.5px;background:#c9a84c;"></span>
+            </div>
+            <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;color:#f0e4c0;line-height:1.25;margin-bottom:8px;">Celebrating Heritage,<br>Uniting the World</h1>
+            <p style="font-size:10px;color:rgba(201,168,76,0.75);line-height:1.65;margin-bottom:20px;">Three extraordinary days of cultural performances, heritage markets, art exhibitions and ceremony.</p>
+
+            <!-- Date pill on green -->
+            <div style="display:inline-flex;align-items:center;background:rgba(0,0,0,0.2);border:1px solid rgba(201,168,76,0.35);border-radius:30px;padding:6px 16px;gap:10px;margin-bottom:18px;">
+              <span style="font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#c9a84c;line-height:1;">3–5</span>
+              <span style="width:1px;height:20px;background:rgba(201,168,76,0.3);display:inline-block;"></span>
+              <div>
+                <div style="font-size:9px;font-weight:700;color:#f0e4c0;">JULY 2027</div>
+                <div style="font-size:7.5px;color:rgba(255,255,255,0.5);">City Convention Centre</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gamosa motif border between hero and body -->
+        <svg width="374" height="44" viewBox="0 0 374 44" xmlns="http://www.w3.org/2000/svg" style="display:block;flex-shrink:0;">
+          <rect width="374" height="44" fill="#F5EFE0"/>
+          <rect width="374" height="10" fill="#1a5c2a"/>
+          <g fill="#c9a84c" opacity=".75">
+            <polygon points="0,10 7,26 14,10"/><polygon points="14,10 21,26 28,10"/><polygon points="28,10 35,26 42,10"/><polygon points="42,10 49,26 56,10"/><polygon points="56,10 63,26 70,10"/><polygon points="70,10 77,26 84,10"/><polygon points="84,10 91,26 98,10"/><polygon points="98,10 105,26 112,10"/><polygon points="112,10 119,26 126,10"/><polygon points="126,10 133,26 140,10"/><polygon points="140,10 147,26 154,10"/><polygon points="154,10 161,26 168,10"/><polygon points="168,10 175,26 182,10"/><polygon points="182,10 189,26 196,10"/><polygon points="196,10 203,26 210,10"/><polygon points="210,10 217,26 224,10"/><polygon points="224,10 231,26 238,10"/><polygon points="238,10 245,26 252,10"/><polygon points="252,10 259,26 266,10"/><polygon points="266,10 273,26 280,10"/><polygon points="280,10 287,26 294,10"/><polygon points="294,10 301,26 308,10"/><polygon points="308,10 315,26 322,10"/><polygon points="322,10 329,26 336,10"/><polygon points="336,10 343,26 350,10"/><polygon points="350,10 357,26 364,10"/><polygon points="364,10 371,26 378,10"/>
+          </g>
+          <!-- diamonds -->
+          <g fill="#9b1c2e" opacity=".65">
+            <polygon points="28,36 42,22 56,36 42,44 42,44"/><polygon points="112,36 126,22 140,36 126,44"/>
+            <polygon points="196,36 210,22 224,36 210,44"/><polygon points="280,36 294,22 308,36 294,44"/>
+          </g>
+          <line x1="0" y1="43" x2="374" y2="43" stroke="#c9a84c" stroke-width="1" opacity=".4"/>
+        </svg>
+
+        <!-- ── BODY CONTENT ── -->
+        <div style="padding:16px 24px 20px;flex:1;">
+
+          <!-- What's on section -->
+          <div style="font-size:7.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#c9a84c;margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+            <span style="width:16px;height:1.5px;background:#c9a84c;display:inline-block;"></span>What's On
+          </div>
+
+          <!-- Highlight items -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;">
+            <div style="background:#fff;border:1px solid #e0d0a0;border-radius:5px;padding:10px 12px;">
+              <div style="width:20px;height:20px;background:rgba(26,92,42,0.1);border-radius:3px;margin-bottom:6px;display:flex;align-items:center;justify-content:center;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1a5c2a" stroke-width="2"><path d="M9 19V6l12-3v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="15" r="3"/></svg>
+              </div>
+              <div style="font-size:9px;font-weight:700;color:#1a5c2a;margin-bottom:2px;">Performances</div>
+              <div style="font-size:8px;color:#6a5030;line-height:1.5;">120+ live shows from 40+ nations</div>
+            </div>
+            <div style="background:#fff;border:1px solid #e0d0a0;border-radius:5px;padding:10px 12px;">
+              <div style="width:20px;height:20px;background:rgba(201,168,76,0.1);border-radius:3px;margin-bottom:6px;display:flex;align-items:center;justify-content:center;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8a6020" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div style="font-size:9px;font-weight:700;color:#8a6020;margin-bottom:2px;">Awards Gala</div>
+              <div style="font-size:8px;color:#6a5030;line-height:1.5;">Honouring community leaders</div>
+            </div>
+            <div style="background:#fff;border:1px solid #e0d0a0;border-radius:5px;padding:10px 12px;">
+              <div style="width:20px;height:20px;background:rgba(155,28,46,0.08);border-radius:3px;margin-bottom:6px;display:flex;align-items:center;justify-content:center;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9b1c2e" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </div>
+              <div style="font-size:9px;font-weight:700;color:#9b1c2e;margin-bottom:2px;">Heritage Market</div>
+              <div style="font-size:8px;color:#6a5030;line-height:1.5;">Silk, crafts &amp; cuisines</div>
+            </div>
+            <div style="background:#fff;border:1px solid #e0d0a0;border-radius:5px;padding:10px 12px;">
+              <div style="width:20px;height:20px;background:rgba(26,92,42,0.1);border-radius:3px;margin-bottom:6px;display:flex;align-items:center;justify-content:center;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1a5c2a" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <div style="font-size:9px;font-weight:700;color:#1a5c2a;margin-bottom:2px;">Art Exhibition</div>
+              <div style="font-size:8px;color:#6a5030;line-height:1.5;">Traditional &amp; contemporary</div>
+            </div>
+          </div>
+
+          <!-- Schedule preview -->
+          <div style="font-size:7.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+            <span style="width:16px;height:1.5px;background:#c9a84c;display:inline-block;"></span>Programme Highlights
+          </div>
+          <div style="background:#fff;border:1px solid #e0d0a0;border-radius:5px;overflow:hidden;margin-bottom:16px;">
+            <div style="display:flex;align-items:center;padding:8px 12px;border-bottom:1px solid #f0e8d0;gap:10px;">
+              <span style="font-size:8px;font-weight:700;color:#c9a84c;white-space:nowrap;min-width:48px;">Day 1 — 3 Jul</span>
+              <span style="font-size:9px;color:#2c1a00;">Grand Opening Ceremony &amp; Cultural Showcase</span>
+            </div>
+            <div style="display:flex;align-items:center;padding:8px 12px;border-bottom:1px solid #f0e8d0;gap:10px;">
+              <span style="font-size:8px;font-weight:700;color:#c9a84c;white-space:nowrap;min-width:48px;">Day 2 — 4 Jul</span>
+              <span style="font-size:9px;color:#2c1a00;">Heritage Market · Art Exhibition Opens</span>
+            </div>
+            <div style="display:flex;align-items:center;padding:8px 12px;gap:10px;">
+              <span style="font-size:8px;font-weight:700;color:#c9a84c;white-space:nowrap;min-width:48px;">Day 3 — 5 Jul</span>
+              <span style="font-size:9px;color:#2c1a00;">Awards Gala &amp; Closing Ceremony</span>
+            </div>
+          </div>
+
+          <!-- Ticket tiers mini -->
+          <div style="font-size:7.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#c9a84c;margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+            <span style="width:16px;height:1.5px;background:#c9a84c;display:inline-block;"></span>Tickets
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:16px;">
+            <div style="flex:1;background:#fff;border:1px solid #e0d0a0;border-radius:5px;padding:8px 10px;text-align:center;">
+              <div style="font-size:7.5px;font-weight:700;color:#6a5030;letter-spacing:1px;text-transform:uppercase;">General</div>
+              <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#1a5c2a;">$45</div>
+            </div>
+            <div style="flex:1;background:#1a5c2a;border-radius:5px;padding:8px 10px;text-align:center;">
+              <div style="font-size:7.5px;font-weight:700;color:rgba(201,168,76,0.7);letter-spacing:1px;text-transform:uppercase;">Delegate</div>
+              <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#c9a84c;">$95</div>
+            </div>
+            <div style="flex:1;background:#fff;border:1px solid #e0d0a0;border-radius:5px;padding:8px 10px;text-align:center;">
+              <div style="font-size:7.5px;font-weight:700;color:#6a5030;letter-spacing:1px;text-transform:uppercase;">Family</div>
+              <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#1a5c2a;">$120</div>
+            </div>
+            <div style="flex:1;background:#fff;border:1px solid #e0d0a0;border-radius:5px;padding:8px 10px;text-align:center;">
+              <div style="font-size:7.5px;font-weight:700;color:#6a5030;letter-spacing:1px;text-transform:uppercase;">VIP</div>
+              <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#9b1c2e;">$250</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Gold motif bottom border + green footer -->
+        <div style="flex-shrink:0;">
+          <svg width="374" height="32" viewBox="0 0 374 32" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+            <rect width="374" height="32" fill="#F5EFE0"/>
+            <line x1="0" y1="3" x2="374" y2="3" stroke="#c9a84c" stroke-width="1.5" opacity=".55"/>
+            <g fill="#c9a84c" opacity=".65">
+              <polygon points="0,3 7,14 14,3"/><polygon points="14,3 21,14 28,3"/><polygon points="28,3 35,14 42,3"/><polygon points="42,3 49,14 56,3"/><polygon points="56,3 63,14 70,3"/><polygon points="70,3 77,14 84,3"/><polygon points="84,3 91,14 98,3"/><polygon points="98,3 105,14 112,3"/><polygon points="112,3 119,14 126,3"/><polygon points="126,3 133,14 140,3"/><polygon points="140,3 147,14 154,3"/><polygon points="154,3 161,14 168,3"/><polygon points="168,3 175,14 182,3"/><polygon points="182,3 189,14 196,3"/><polygon points="196,3 203,14 210,3"/><polygon points="210,3 217,14 224,3"/><polygon points="224,3 231,14 238,3"/><polygon points="238,3 245,14 252,3"/><polygon points="252,3 259,14 266,3"/><polygon points="266,3 273,14 280,3"/><polygon points="280,3 287,14 294,3"/><polygon points="294,3 301,14 308,3"/><polygon points="308,3 315,14 322,3"/><polygon points="322,3 329,14 336,3"/><polygon points="336,3 343,14 350,3"/><polygon points="350,3 357,14 364,3"/><polygon points="364,3 371,14 378,3"/>
+            </g>
+            <rect y="18" width="374" height="14" fill="#1a5c2a"/>
+          </svg>
+          <div style="background:#1a5c2a;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:8px;font-weight:700;color:#c9a84c;">www.eventname.org</div>
+              <div style="font-size:7.5px;color:rgba(255,255,255,0.5);margin-top:2px;">info@eventname.org</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:8px;font-weight:700;color:rgba(201,168,76,0.7);">#AssamConvention2027</div>
+              <div style="font-size:7px;color:rgba(255,255,255,0.4);margin-top:2px;">Facebook · Instagram · Twitter</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- ╔══════════════════════════════════════╗
+           ║  END COPY — PROMOTION LEAFLET        ║
+           ╚══════════════════════════════════════╝ -->
+    </div>
+  </div>
+
+</div><!-- end .mkt-shell -->
+
+<script>
+function copyMkt(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  // Build a full standalone HTML document wrapping just this component
+  const fonts = '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">';
+  const reset = '<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}body{margin:0;padding:20px;background:#f0f0f0;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;}</style>';
+  const fullHtml = `<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width,initial-scale=1.0">\n<title>Event Marketing Component</title>\n${fonts}\n${reset}\n</head>\n<body>\n${el.outerHTML}\n</body>\n</html>`;
+
+  navigator.clipboard.writeText(fullHtml).then(() => {
+    const btn = document.querySelector(`[onclick="copyMkt('${id}')"]`);
+    const orig = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2200);
+  }).catch(() => {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = fullHtml;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const btn = document.querySelector(`[onclick="copyMkt('${id}')"]`);
+    btn.textContent = '✅ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 Copy HTML'; btn.classList.remove('copied'); }, 2200);
+  });
+}
+</script>
+
 </body>
 </html>

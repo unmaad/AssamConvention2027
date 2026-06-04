@@ -1114,7 +1114,7 @@ function dayTab(el) {
           </g>
           <line x1="0" y1="20" x2="500" y2="20" stroke="#9b1c2e" stroke-width="1" opacity=".4"/>
         </svg>
-        <svg viewBox="0 0 500 16" style="width:100%;height:16px;display:block;flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 500 16" style="width:500px;height:16px;display:block;flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="motif-dots" x="0" y="0" width="7" height="16" patternUnits="userSpaceOnUse">
               <circle cx="3" cy="5" r="1.2" fill="#9B1C2E" opacity="0.7" />
@@ -1682,28 +1682,33 @@ function downloadPdf(id, filename) {
     filename: filename + '.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { 
-      scale: 2, 
+      scale: 2,
       useCORS: true, 
-      allowTaint: false,
+      allowTaint: true, // Necessary for local file access
+      scrollY: 0,       // Resets scroll context for the capture
+      scrollX: 0,
       letterRendering: true,
-      logging: false
+      logging: true     // Logs rendering steps to console to help identify stuck assets
     },
-    jsPDF: { unit: 'px', format: [el.offsetWidth, el.offsetHeight], orientation: 'portrait', hotfixes: ['px_scaling'] }
+    jsPDF: { unit: 'px', format: [el.clientWidth, el.clientHeight], orientation: 'portrait', hotfixes: ['px_scaling'] }
   };
 
-  html2pdf().set(opt).from(el).save().then(() => {
-    btn.innerHTML = originalText;
-    btn.style.opacity = '1';
-    btn.style.pointerEvents = 'auto';
-  }).catch(err => {
-    console.error('PDF Generation Error:', err);
-    btn.innerHTML = '❌ Error';
-    setTimeout(() => {
+  // Small timeout to allow the browser to settle the layout for the renderer
+  setTimeout(() => {
+    html2pdf().set(opt).from(el).save().then(() => {
       btn.innerHTML = originalText;
       btn.style.opacity = '1';
       btn.style.pointerEvents = 'auto';
-    }, 2000);
-  });
+    }).catch(err => {
+      console.error('PDF Generation Error:', err);
+      btn.innerHTML = '❌ Error';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+      }, 2000);
+    });
+  }, 100);
 }
 </script>
 

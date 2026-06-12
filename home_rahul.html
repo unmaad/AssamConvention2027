@@ -107,7 +107,7 @@ body {
 }
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; line-height:1.2; }
 a { text-decoration:none; }
-img { max-width:100%; }
+img {max-width: 200%;}
 
 /* ═══════════════════════════════════
    THEME SWITCHER BAR
@@ -142,8 +142,8 @@ img { max-width:100%; }
 ═══════════════════════════════════ */
 nav {
   background:var(--nav-bg);
-  height:95px;
-  padding:2px 48px;
+  height:120px;
+  padding:3px 48px;
   display:flex; align-items:center; gap:0;
   transition:background .35s;
   position:relative; z-index:100;
@@ -201,8 +201,9 @@ nav {
   align-items: center;
 }
 .logo-image {
-  height: 90px;
+  height: 100px;
   width: auto;
+  padding-top: 3px;
   max-width: 220px;
   object-fit: contain;
   display: block;
@@ -215,8 +216,8 @@ nav {
 ═══════════════════════════════════ */
 .hero {
   background:var(--hero-bg);
-  min-height:600px;
-  padding:90px 48px 80px;
+  min-height:400px;
+  padding:20px 48px 80px;
   display:flex; align-items:center;
   position:relative; overflow:hidden;
   transition:background .35s;
@@ -277,6 +278,25 @@ nav {
   transition:background .18s;
 }
 .btn-s:hover { background:rgba(255,255,255,.07); }
+.hero-image {
+  position:absolute;
+  right: 150px;
+  top: 50%;
+  transform:translateY(-50%);
+  width: 590px;
+  height: 380px;
+  z-index: 1;
+  overflow:hidden;
+  border-radius:8px;
+}
+.hero-image img {
+  width: 100%;
+  height:100%;
+  opacity: 50%;
+  object-fit:cover;
+}
+
+img {}
 .date-badge {
   position:absolute; right:88px; top:50%; transform:translateY(-50%);
   border:1.5px solid var(--accent);
@@ -611,14 +631,502 @@ footer {
 }
 .foot-social:hover { opacity:1; }
 .foot-social svg { width:14px; height:14px; }
+
+/* ═══════════════════════════════════
+   RESPONSIVE DESIGN — MOBILE FIRST
+═══════════════════════════════════ */
+
+/* Tablet & Up (default styles above) */
 @media (max-width: 1024px) {
   nav { padding: 0 24px; gap: 15px; }
-  .logo-image { height: 75px; }
+  .logo-image { height: 100px; }
+  .hero { padding: 70px 32px 60px; }
+  .stats { grid-template-columns: repeat(2, 1fr); padding: 24px 32px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hi-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .perf-grid { grid-template-columns: repeat(2, 1fr); }
+  .gal-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: 180px; }
+  .gal-item.big { grid-column: span 1; grid-row: span 1; }
+  .gal-item.wide { grid-column: span 1; }
+  .foot-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .date-badge { right: 32px; padding: 20px 24px; }
 }
+
+/* Small Tablets & Large Mobile (768px and below) */
 @media (max-width: 768px) {
-  nav { height: 80px; padding: 0 15px; }
-  .logo-image { height: 65px; }
-  .nav-links { gap: 2px; }
+  body { font-size: 14px; }
+  
+  /* Navigation */
+  nav { 
+    height: auto; 
+    padding: 10px 12px; 
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .logo-image { height: 90px; }
+  .nav-links { 
+    width: 100%;
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-links li a { 
+    font-size: 12px; 
+    padding: 5px 10px;
+  }
+  .nav-links .nav-cta { 
+    margin-left: 0 !important;
+  }
+  
+  /* Theme Bar */
+  .theme-bar { 
+    padding: 6px 16px; 
+    gap: 6px;
+  }
+  .tbtn { 
+    font-size: 10px; 
+    padding: 3px 10px;
+  }
+  
+  /* Hero */
+  .hero {
+    min-height: 400px;
+    padding: 0px 20px 40px;
+  }
+  .hero h1 { 
+    font-size: 36px; 
+    margin-bottom: 16px;
+  }
+  .hero-desc { 
+    font-size: 14px; 
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow { 
+    font-size: 10px; 
+    margin-bottom: 16px;
+  }
+  .hero-eyebrow::before { 
+    width: 24px;
+  }
+  .hero-btns { 
+    gap: 10px;
+  }
+  .btn-p, .btn-s { 
+    padding: 10px 20px; 
+    font-size: 12px;
+  }
+  .date-badge { 
+    position: static;
+    transform: none;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 16px 20px;
+  }
+  .date-badge .db-day { 
+    font-size: 42px;
+  }
+  .hero-image {
+    position: absolute;
+    right: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 250px;
+    z-index: 0;
+    opacity: 0.2;
+  }
+  
+  /* Stats */
+  .stats { 
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 20px 20px;
+    gap: 16px;
+  }
+  .stat { 
+    padding: 0 12px;
+    border-right: none;
+  }
+  .stat:nth-child(2n) { 
+    border-right: none;
+  }
+  .stat-n { 
+    font-size: 28px;
+  }
+  .stat-l { 
+    font-size: 11px;
+  }
+  
+  /* Sections */
+  .sec { 
+    padding: 50px 20px;
+  }
+  .sec-title { 
+    font-size: 26px; 
+    margin-bottom: 12px;
+  }
+  .sec-sub { 
+    font-size: 14px; 
+    margin-bottom: 36px;
+  }
+  
+  /* About */
+  .about-grid { 
+    gap: 30px;
+  }
+  .img-ph-tall { 
+    height: 300px;
+  }
+  .about-text p { 
+    font-size: 14px;
+  }
+  .tag { 
+    font-size: 11px; 
+    padding: 4px 10px;
+  }
+  
+  /* Highlights */
+  .hi-grid { 
+    grid-template-columns: 1fr; 
+    gap: 16px;
+  }
+  .hi-card { 
+    padding: 24px 18px;
+  }
+  .hi-icon { 
+    width: 40px; 
+    height: 40px; 
+    margin-bottom: 16px;
+  }
+  .hi-card h3 { 
+    font-size: 18px; 
+    margin-bottom: 8px;
+  }
+  .hi-card p { 
+    font-size: 13px;
+  }
+  
+  /* Schedule */
+  .sched-tabs { 
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+  .stab { 
+    padding: 10px 16px; 
+    font-size: 12px;
+  }
+  .sched-row { 
+    grid-template-columns: 80px 1fr auto;
+    gap: 16px; 
+    padding: 16px;
+  }
+  .stime { 
+    font-size: 11px;
+  }
+  .sname { 
+    font-size: 14px;
+  }
+  .svenue { 
+    font-size: 11px;
+  }
+  
+  /* Performers */
+  .perf-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+  }
+  .perf-photo { 
+    height: 120px;
+  }
+  .perf-name { 
+    font-size: 14px;
+  }
+  .perf-role { 
+    font-size: 10px;
+  }
+  
+  /* Gallery */
+  .gal-grid { 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+  .gal-item { 
+    height: 200px;
+  }
+  
+  /* CTA Section */
+  .cta-sec { 
+    padding: 50px 20px;
+  }
+  .cta-sec h2 { 
+    font-size: 28px;
+  }
+  .cta-sec > p { 
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .ticket-row { 
+    gap: 12px; 
+    margin-bottom: 30px;
+  }
+  .tick { 
+    min-width: 140px; 
+    padding: 18px 16px;
+  }
+  .tick-type { 
+    font-size: 9px;
+  }
+  .tick-price { 
+    font-size: 28px;
+    margin: 6px 0 4px;
+  }
+  .tick-desc { 
+    font-size: 10px;
+  }
+  .cta-btns { 
+    gap: 10px;
+  }
+  
+  /* Sponsors */
+  .sponsors-sec { 
+    padding: 40px 20px;
+  }
+  .sponsors-label { 
+    font-size: 9px; 
+    margin-bottom: 20px;
+  }
+  .sponsors-row { 
+    gap: 10px;
+  }
+  .spon { 
+    width: 110px; 
+    height: 50px;
+    font-size: 9px;
+  }
+  .spon.gold { 
+    width: 140px; 
+    height: 55px;
+  }
+  
+  /* Footer */
+  footer { 
+    padding: 40px 20px 20px;
+  }
+  .foot-grid { 
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .foot-about { 
+    font-size: 12px;
+  }
+  .foot-h { 
+    font-size: 9px; 
+    margin-bottom: 12px;
+  }
+  .foot-links a { 
+    font-size: 12px;
+  }
+  .foot-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    font-size: 11px;
+  }
+  .foot-socials { 
+    justify-content: center;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  body { font-size: 13px; }
+  
+  /* Navigation */
+  nav { 
+    height: auto; 
+    padding: 8px 10px;
+  }
+  .logo-image { 
+    height: 75px;
+  }
+  .nav-links { 
+    width: 100%;
+    gap: 0;
+    margin-top: 8px;
+    justify-content: space-around;
+  }
+  .nav-links li a { 
+    font-size: 11px; 
+    padding: 4px 6px;
+  }
+  .nav-links li:nth-child(n+5) { 
+    display: none;
+  }
+  .nav-links .nav-cta { 
+    display: none;
+  }
+  
+  /* Theme Bar */
+  .theme-bar { 
+    padding: 4px 12px; 
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .tbtn { 
+    font-size: 9px; 
+    padding: 2px 8px;
+  }
+  
+  /* Hero */
+  .hero { 
+    min-height: 400px;
+    padding: 40px 16px 30px;
+  }
+  .hero h1 { 
+    font-size: 28px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .hero-desc { 
+    font-size: 13px; 
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .hero-eyebrow { 
+    font-size: 9px;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+  .hero-eyebrow::before { 
+    width: 16px;
+  }
+  .hero-btns { 
+    gap: 8px;
+    flex-direction: column;
+  }
+  .btn-p, .btn-s { 
+    width: 100%;
+    padding: 12px 16px; 
+    font-size: 11px;
+  }
+  .date-badge { 
+    margin-top: 16px;
+    padding: 12px 16px;
+  }
+  .date-badge .db-month { 
+    font-size: 10px;
+  }
+  .date-badge .db-day { 
+    font-size: 36px;
+  }
+  .date-badge .db-range { 
+    font-size: 12px;
+  }
+  .date-badge .db-venue { 
+    font-size: 9px;
+  }
+  
+  /* Stats */
+  .stats { 
+    grid-template-columns: 1fr; 
+    padding: 16px 16px;
+    gap: 12px;
+  }
+  .stat { 
+    padding: 0 10px;
+  }
+  .stat-n { 
+    font-size: 24px;
+  }
+  .stat-l { 
+    font-size: 10px;
+  }
+  
+  /* Sections */
+  .sec { 
+    padding: 40px 16px;
+  }
+  .sec-title { 
+    font-size: 22px; 
+    margin-bottom: 10px;
+  }
+  .sec-sub { 
+    font-size: 13px; 
+    margin-bottom: 24px;
+  }
+  
+  /* About */
+  .img-ph-tall { 
+    height: 250px;
+  }
+  
+  /* Highlights */
+  .hi-card { 
+    padding: 18px 14px;
+  }
+  .hi-icon { 
+    width: 36px; 
+    height: 36px;
+  }
+  .hi-card h3 { 
+    font-size: 16px; 
+  }
+  
+  /* Schedule */
+  .stab { 
+    padding: 8px 12px; 
+    font-size: 11px;
+  }
+  .sched-row { 
+    grid-template-columns: 70px 1fr;
+    gap: 12px; 
+    padding: 12px;
+  }
+  .sbadge { 
+    grid-column: span 2;
+  }
+  
+  /* Performers */
+  .perf-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .perf-photo { 
+    height: 150px;
+  }
+  
+  /* CTA Section */
+  .cta-sec { 
+    padding: 40px 16px;
+  }
+  .cta-sec h2 { 
+    font-size: 24px;
+  }
+  .ticket-row { 
+    flex-direction: column;
+    gap: 12px;
+  }
+  .tick { 
+    min-width: 100%;
+    width: 100%;
+  }
+  .tick-price { 
+    font-size: 26px;
+  }
+  
+  /* Footer */
+  footer { 
+    padding: 30px 16px 16px;
+  }
+  .foot-h { 
+    font-size: 8px; 
+    margin-bottom: 10px;
+  }
+  .foot-links a { 
+    font-size: 11px;
+  }
 }
 </style>
 </head>
@@ -630,8 +1138,10 @@ footer {
 <div class="theme-bar">
   <span class="theme-bar-label">Preview theme:</span>
   <button class="tbtn on"  onclick="T('',this)">BnW</button>
+  <!--
   <button class="tbtn"     onclick="T('b',this)">PrimaryBloodRed</button>
   <button class="tbtn"     onclick="T('c',this)">PrimaryDarkPersimmon</button>
+-->
   
 </div>
 
@@ -651,7 +1161,7 @@ footer {
   -->
   
   <a href="#" class="logo-link" title="Assam Convention 2027 - Home">
-    <img class="logo-image" src="rhino-lily.png" alt="Assam Convention 2027 Logo" />
+    <img class="logo-image" src="rahul_logo.png" alt="Assam Convention 2027 Logo" />
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -678,6 +1188,9 @@ footer {
       <button class="btn-p">Register Now</button>
       <button class="btn-s">View Programme</button>
     </div>
+  </div>
+  <div class="hero-image">
+    <img src="Mukha.png" alt="Mukha - Cultural Element" />
   </div>
   <div class="date-badge">
     <div class="db-month">July</div>
@@ -882,7 +1395,7 @@ footer {
       <p class="foot-about">An international platform celebrating cultural heritage, diaspora identity, and community unity. Bringing the world together, one celebration at a time.</p>
     </div>
     -->
-    <img src="Transparent.png" height="85px" width="85px" />
+    <img class="logo-image" src="rahul_logo.png" alt="Sonali logo" />
     <div>
       <div class="foot-h">Quick Links</div>
       <ul class="foot-links">
@@ -1067,9 +1580,11 @@ function dayTab(el) {
 
   <!-- ── HEADER ── -->
   <div class="mkt-shell-header">
-    <h2>Marketing Materials</h2>
+    <h2>Marketing Materials</h2> 
+    <!--
     <p>Each is self-contained — copy the HTML block and paste into any project. For typography, include the fonts link below in your document's <code style="color:#c9a84c;">&lt;head&gt;</code>.</p>
     <div class="mkt-fonts-note">&lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&amp;family=Raleway:wght@400;600;700&amp;display=swap" rel="stylesheet"&gt;</div>
+  -->
   </div>
 
   <!-- ════════════════════════════════════
@@ -1082,7 +1597,7 @@ function dayTab(el) {
       <div class="mkt-item-meta-left">
         <h3>1 — Event Invitation Card</h3>
         <div class="mkt-dims">A5 · 148 × 210 mm · Print &amp; Digital</div>
-        <div class="mkt-usage">Formal digital invite, printable card, email attachment, or PDF export. Replace logo placeholder with your PNG image tag. Swap bracketed text with real event details.</div>
+        <div class="mkt-usage">Formal digital invite, printable card, email attachment, or PDF export.</div>
       </div>
       <div style="display:flex; gap:10px;">
         <button class="copy-btn" onclick="copyMkt('mkt-invite')">📋 Copy HTML</button>
@@ -1098,7 +1613,7 @@ function dayTab(el) {
 
         <!-- Green header band -->
         <div style="background:#1a5c2a;height:94px;display:flex;align-items:center;padding:0 30px;gap:0;">
-          <img src="Transparent.png" height="85px" width="85px" crossorigin="anonymous" />
+          <img src="rahul_logo.png" height="85px" width="85px" crossorigin="anonymous" />
           <div style="margin-left:auto;text-align:right;">
             <div style="font-size:8.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#c9a84c;">Assam Convention 2027</div>
             <div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:4px;">Atlanta</div>
@@ -1255,7 +1770,7 @@ function dayTab(el) {
         <!-- Logo zone (left column) -->
         <div style="position:absolute;left:0;top:0;width:220px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
           <!-- LOGO SLOT: replace with <img src="logo.png" style="width:120px;"> -->
-          <img src="Transparent.png" height="85px" width="85px" crossorigin="anonymous" />
+          <img src="rahul_logo.png" height="85px" width="85px" crossorigin="anonymous" />
           <div style="font-size:8px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(201,168,76,0.7);">Official Event</div>
         </div>
 
@@ -1353,7 +1868,7 @@ function dayTab(el) {
 
         <!-- Logo + title row in crimson band -->
         <div style="position:absolute;top:18px;left:22px;right:22px;display:flex;align-items:center;justify-content:space-between;">
-          <img src="Transparent.png" height="85px" width="85px" crossorigin="anonymous" />
+          <img src="rahul_logo.png" height="85px" width="85px" crossorigin="anonymous" />
           <div style="text-align:right;">
             <div style="font-size:7.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;">Assam Convention 2027</div>
             <div style="font-size:9px;color:rgba(255,255,255,0.65);margin-top:2px;">Atlanta</div>
@@ -1450,7 +1965,7 @@ function dayTab(el) {
         <!-- ── HEADER: green with logo ── -->
         <div style="background:#1a5c2a;padding:22px 24px 0;flex-shrink:0;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-            <img src="Transparent.png" height="85px" width="85px" crossorigin="anonymous" />
+            <img src="rahul_logo.png" height="85px" width="85px" crossorigin="anonymous" />
             <div style="text-align:right;">
               <div style="font-size:7.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#c9a84c;">Assam Convention</div>
               <div style="font-size:8px;color:rgba(255,255,255,0.55);margin-top:3px;">Atlanta · 2027</div>
